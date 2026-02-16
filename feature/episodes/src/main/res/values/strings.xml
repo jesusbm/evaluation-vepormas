@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_confirm_title">Confirmación</string>
+    <string name="dialog_confirm_message">¿Desea quitar el elemento de la lista?</string>
+    <string name="dialog_confirm_button_ok">Confirmar</string>
+    <string name="dialog_confirm_button_cancel">Cancelar</string>
+</resources>
