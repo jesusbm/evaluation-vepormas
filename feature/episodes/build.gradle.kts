@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":uibase"))
     implementation(project(":network"))
     implementation(project(":feature:showdetails"))
+    implementation(project(":shared"))
 
     // hilt
     implementation(libs.hilt.android)

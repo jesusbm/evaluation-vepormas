@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
+import com.ruskiikot.shared.platform
 import com.ruskiikot.vepormasevaluacion.episodes.domain.model.Episode
 import com.ruskiikot.vepormasevaluacion.episodes.domain.model.ShowSummary
 import com.ruskiikot.vepormasevaluacion.episodes.R
