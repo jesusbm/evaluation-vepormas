@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.serialization)
 }
 
 android {
@@ -42,6 +43,11 @@ dependencies {
     api(libs.networking.retrofit2)
     api(libs.networking.gson)
     api(libs.networking.interceptor)
+    api(libs.networking.ktor.core)
+    api(libs.networking.ktor.okhttp)
+    api(libs.networking.ktor.contentnegotiation)
+    api(libs.networking.ktor.logging)
+    api(libs.networking.ktor.serialization.json)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

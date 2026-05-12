@@ -28,6 +28,12 @@ compose-multiplatform = "1.10.3"
 material3 = "1.9.0"
 uiTooling = "1.10.0"
 uiToolingPreview = "1.10.3"
+ktor-core-version = "3.3.0"
+ktor-okhttp-version = "3.3.0"
+ktor-darwin-version = "3.3.0"
+ktor-content-negotiation-version = "3.3.0"
+ktor-serialization-json-version = "3.3.0"
+ktor-logging-version = "3.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +56,12 @@ kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-seria
 networking-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 networking-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 networking-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp-version" }
+networking-ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor-core-version" }
+networking-ktor-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor-okhttp-version" }
+networking-ktor-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor-darwin-version" }
+networking-ktor-contentnegotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor-content-negotiation-version" }
+networking-ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor-logging-version" }
+networking-ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor-serialization-json-version" }
 
 # hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt-version" }
