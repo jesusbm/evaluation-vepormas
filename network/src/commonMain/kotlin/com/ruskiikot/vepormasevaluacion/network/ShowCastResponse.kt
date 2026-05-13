@@ -1,21 +1,25 @@
 package com.ruskiikot.vepormasevaluacion.network
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class ShowCastResponse(
-    @SerializedName("person")
+    @SerialName("person")
     val person: ShowCastPersonResponse,
 )
 
+@Serializable
 data class ShowCastPersonResponse(
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 
-    @SerializedName("image")
+    @SerialName("image")
     val image: ShowCastImageResponse?,
 )
 
+@Serializable
 data class ShowCastImageResponse(
-    @SerializedName("medium")
+    @SerialName("medium")
     val medium: String,
 )

@@ -1,58 +1,64 @@
 package com.ruskiikot.vepormasevaluacion.network
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class ShowResponse(
-    @SerializedName("id")
+    @SerialName("id")
     val id: Long,
 
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 
-    @SerializedName("image")
+    @SerialName("image")
     val image: ShowImageResponse?,
 
-    @SerializedName("rating")
+    @SerialName("rating")
     val rating: ShowRatingResponse,
 
-    @SerializedName("network")
+    @SerialName("network")
     val network: ShowNetworkResponse,
 
-    @SerializedName("genres")
+    @SerialName("genres")
     val genres: List<String>,
 
-    @SerializedName("officialSite")
+    @SerialName("officialSite")
     val officialSite: String?,
 
-    @SerializedName("schedule")
+    @SerialName("schedule")
     val schedule: ShowScheduleResponse,
 
-    @SerializedName("summary")
+    @SerialName("summary")
     val summary: String,
 )
 
+@Serializable
 data class ShowImageResponse(
-    @SerializedName("medium")
+    @SerialName("medium")
     val medium: String,
 
-    @SerializedName("original")
+    @SerialName("original")
     val original: String,
 )
 
+@Serializable
 data class ShowRatingResponse(
-    @SerializedName("average")
+    @SerialName("average")
     val average: String?,
 )
 
+@Serializable
 data class ShowNetworkResponse(
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 )
 
+@Serializable
 data class ShowScheduleResponse(
-    @SerializedName("time")
+    @SerialName("time")
     val time: String,
 
-    @SerializedName("days")
+    @SerialName("days")
     val days: List<String>,
 )

@@ -1,43 +1,49 @@
 package com.ruskiikot.vepormasevaluacion.network
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class ShowSearchResponse(
-    @SerializedName("show")
+    @SerialName("show")
     val show: ShowSearchDataResponse,
 )
 
+@Serializable
 data class ShowSearchDataResponse(
-    @SerializedName("id")
+    @SerialName("id")
     val id: Long,
 
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 
-    @SerializedName("network")
+    @SerialName("network")
     val network: ShowSearchNetworkResponse?,
 
-    @SerializedName("schedule")
+    @SerialName("schedule")
     val schedule: ShowSearchScheduleResponse,
 
-    @SerializedName("image")
+    @SerialName("image")
     val image: ShowSearchImageResponse?,
 )
 
+@Serializable
 data class ShowSearchNetworkResponse(
-    @SerializedName("name")
+    @SerialName("name")
     val name: String,
 )
 
+@Serializable
 data class ShowSearchScheduleResponse(
-    @SerializedName("time")
+    @SerialName("time")
     val time: String,
 
-    @SerializedName("days")
+    @SerialName("days")
     val days: List<String>,
 )
 
+@Serializable
 data class ShowSearchImageResponse(
-    @SerializedName("medium")
+    @SerialName("medium")
     val medium: String,
 )

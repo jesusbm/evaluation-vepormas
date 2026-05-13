@@ -7,8 +7,6 @@ junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeCompose = "2.9.2"
 activityCompose = "1.10.1"
-retrofit = "3.0.0"
-okhttp-version = "4.12.0"
 hilt-version = "2.51.1"
 ksp-version = "2.0.21-1.0.26"
 hilt-lifecycle-version = "1.3.0"
@@ -53,9 +51,6 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 
 # networking
-networking-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-networking-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
-networking-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp-version" }
 networking-ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor-core-version" }
 networking-ktor-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor-okhttp-version" }
 networking-ktor-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor-darwin-version" }

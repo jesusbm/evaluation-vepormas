@@ -1,55 +1,74 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.kotlin.multiplatform.library)
+    alias(libs.plugins.android.lint)
     alias(libs.plugins.serialization)
 }
 
-android {
-    namespace = "com.ruskiikot.vepormasevaluacion.network"
-    compileSdk = 35
-
-    defaultConfig {
+kotlin {
+    androidLibrary {
+        namespace = "com.ruskiikot.vepormasevaluacion.network"
+        compileSdk = 35
         minSdk = 29
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+    val xcfName = "sharedKit"
+
+    iosArm64 {
+        binaries.framework {
+            baseName = xcfName
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+
+    iosSimulatorArm64 {
+        binaries.framework {
+            baseName = xcfName
+        }
     }
-    kotlinOptions {
-        jvmTarget = "11"
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(libs.kotlin.stdlib)
+                api(libs.networking.ktor.core)
+                api(libs.networking.ktor.contentnegotiation)
+                api(libs.networking.ktor.logging)
+                api(libs.networking.ktor.serialization.json)
+            }
+        }
+
+        commonTest {
+            dependencies {
+                implementation(libs.kotlin.test)
+            }
+        }
+
+        androidMain {
+            dependencies {
+                api(libs.networking.ktor.okhttp)
+            }
+        }
+
+        androidUnitTest {
+            dependencies {
+                implementation(libs.junit)
+            }
+        }
+
+        androidInstrumentedTest {
+            dependencies {
+                implementation(libs.androidx.junit)
+                implementation(libs.androidx.espresso.core)
+                implementation(libs.androidx.core)
+                implementation(libs.androidx.junit)
+                implementation(libs.androidx.runner)
+            }
+        }
+
+        iosMain {
+            dependencies {
+                api(libs.networking.ktor.darwin)
+            }
+        }
     }
-}
-
-dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-
-    // networking
-    api(libs.networking.retrofit2)
-    api(libs.networking.gson)
-    api(libs.networking.interceptor)
-    api(libs.networking.ktor.core)
-    api(libs.networking.ktor.okhttp)
-    api(libs.networking.ktor.contentnegotiation)
-    api(libs.networking.ktor.logging)
-    api(libs.networking.ktor.serialization.json)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

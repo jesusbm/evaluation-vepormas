@@ -58,11 +58,6 @@ dependencies {
     // serialization
     implementation(libs.kotlinx.serialization)
 
-    // networking
-    implementation(libs.networking.retrofit2)
-    implementation(libs.networking.gson)
-    implementation(libs.networking.interceptor)
-
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
