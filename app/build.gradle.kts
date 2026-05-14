@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.serialization)
     alias(libs.plugins.compose.compiler)
 }
@@ -59,7 +58,5 @@ dependencies {
     implementation(libs.kotlinx.serialization)
 
     // hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.lifecycle)
+
 }

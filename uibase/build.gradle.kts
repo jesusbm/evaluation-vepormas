@@ -30,17 +30,7 @@ kotlin {
                 // coil
                 api(libs.coil.compose)
                 api(libs.coil.ktor3)
-
-                //testImplementation(libs.junit)
-                //androidTestImplementation(libs.androidx.junit)
-                //androidTestImplementation(libs.androidx.espresso.core)
-                //debugImplementation(libs.androidx.ui.tooling)
-                //debugImplementation(libs.androidx.ui.test.manifest)
             }
         }
     }
-}
-
-dependencies {
-    androidRuntimeClasspath(libs.compose.ui.tooling)
 }

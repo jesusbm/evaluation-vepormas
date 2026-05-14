@@ -1,55 +1,31 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.kotlin.multiplatform.library)
+    alias(libs.plugins.android.lint)
+    alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
 }
 
-android {
-    namespace = "com.ruskiikot.vepormasevaluacion.showdetails"
-    compileSdk = 35
+kotlin {
 
-    defaultConfig {
+    androidLibrary {
+        namespace = "com.ruskiikot.vepormasevaluacion.showdetails"
+        compileSdk = 35
         minSdk = 29
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+    iosArm64()
+
+    iosSimulatorArm64()
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(project(":domain"))
+                implementation(project(":uibase"))
+                implementation(project(":network"))
+                implementation(libs.lifecycle.viewmodel)
+            }
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
-    }
-}
-
-dependencies {
-
-    implementation(project(":domain"))
-    implementation(project(":uibase"))
-    implementation(project(":network"))
-
-    // hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.lifecycle)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

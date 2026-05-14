@@ -7,9 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.ruskiikot.vepormasevaluacion.ui.navigation.AppScreenContainer
 import com.ruskiikot.vepormasevaluacion.ui.theme.VePorMasEvaluacionTheme
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
