@@ -27,6 +27,7 @@ kotlin {
                 implementation(project(":network"))
                 implementation(libs.lifecycle.viewmodel)
                 implementation(libs.compose.components.resources)
+                implementation(libs.kotlin.datetime)
             }
         }
     }

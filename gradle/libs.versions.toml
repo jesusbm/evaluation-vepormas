@@ -10,6 +10,7 @@ kotlinStdlib = "2.1.0"
 androidxCore = "1.5.0"
 appcompat = "1.7.1"
 lifecycleViewmodel = "2.10.0"
+kotlinDatetime = "0.8.0"
 
 lifecycleRuntimeCompose = "2.9.2"
 activityCompose = "1.10.1"
@@ -50,6 +51,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodel" }
 compose-components-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "compose-multiplatform" }
+kotlin-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinDatetime" }
 
 # networking
 networking-ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor-core-version" }
