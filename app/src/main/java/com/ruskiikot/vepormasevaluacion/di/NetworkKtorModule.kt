@@ -8,24 +8,26 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import org.koin.dsl.module
 
-class NetworkKtorModule {
+val networkKtorModule = module {
+    single { getTvMazeKtorApiClient() }
+}
 
-    fun getTvMazeKtorApiClient(): TvMazeKtorApiClient {
-        val client = getKtorClient()
-        return TvMazeKtorApiClient(client)
-    }
+private fun getTvMazeKtorApiClient(): TvMazeKtorApiClient {
+    val client = getKtorClient()
+    return TvMazeKtorApiClient(client)
+}
 
-    private fun getKtorClient(): HttpClient {
-        return HttpClient(engineFactory = OkHttp) {
-            defaultRequest {
-                url(urlString = "https://api.tvmaze.com")
-            }
-            install(plugin = ContentNegotiation) {
-                json(Json { ignoreUnknownKeys = true  })
-            }
-            install(Logging)
-
+private fun getKtorClient(): HttpClient {
+    return HttpClient(engineFactory = OkHttp) {
+        defaultRequest {
+            url(urlString = "https://api.tvmaze.com")
         }
+        install(plugin = ContentNegotiation) {
+            json(Json { ignoreUnknownKeys = true })
+        }
+        install(Logging)
+
     }
 }

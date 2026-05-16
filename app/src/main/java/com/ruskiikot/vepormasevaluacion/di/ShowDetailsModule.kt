@@ -4,10 +4,30 @@ import com.ruskiikot.vepormasevaluacion.showdetails.data.repository.ShowDetailsR
 import com.ruskiikot.vepormasevaluacion.showdetails.data.datasource.ShowDetailsRemoteDataSource
 import com.ruskiikot.vepormasevaluacion.showdetails.data.datasource.impl.ShowDetailsRemoteDataSourceImpl
 import com.ruskiikot.vepormasevaluacion.showdetails.domain.repository.ShowDetailsRepository
+import com.ruskiikot.vepormasevaluacion.showdetails.domain.usecase.LoadShowDetailsUseCase
+import com.ruskiikot.vepormasevaluacion.showdetails.presentation.ShowDetailsViewModel
+import org.koin.core.module.dsl.viewModelOf
+import org.koin.dsl.module
 
-interface ShowDetailsModule {
+val showDetailsModule = module {
 
-    fun getShowDetailsRepository(impl: ShowDetailsRepositoryImpl): ShowDetailsRepository
+    single<ShowDetailsRepository> {
+        ShowDetailsRepositoryImpl(
+            showDetailsRemoteDataSource = get(),
+        )
+    }
 
-    fun getShowDetailsRemoteDataSource(impl: ShowDetailsRemoteDataSourceImpl): ShowDetailsRemoteDataSource
+    single<ShowDetailsRemoteDataSource> {
+        ShowDetailsRemoteDataSourceImpl(
+            apiClient = get(),
+        )
+    }
+
+    single {
+        LoadShowDetailsUseCase(
+            showDetailsRepository = get(),
+        )
+    }
+
+    viewModelOf(::ShowDetailsViewModel)
 }

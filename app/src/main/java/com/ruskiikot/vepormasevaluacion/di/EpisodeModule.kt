@@ -4,10 +4,37 @@ import com.ruskiikot.vepormasevaluacion.episodes.data.datasource.EpisodesRemoteD
 import com.ruskiikot.vepormasevaluacion.episodes.data.datasource.impl.EpisodesRemoteDataSourceImpl
 import com.ruskiikot.vepormasevaluacion.episodes.data.repository.EpisodeRepositoryImpl
 import com.ruskiikot.vepormasevaluacion.episodes.domain.repository.EpisodeRepository
+import com.ruskiikot.vepormasevaluacion.episodes.domain.usecase.DeleteEpisodeFromListingUseCase
+import com.ruskiikot.vepormasevaluacion.episodes.domain.usecase.LoadEpisodesForCurrentDayUseCase
+import com.ruskiikot.vepormasevaluacion.episodes.presentation.EpisodesViewModel
+import org.koin.core.module.dsl.viewModelOf
+import org.koin.dsl.module
 
-interface EpisodeModule {
+val episodeModule = module {
 
-    fun getEpisodeRepository(impl: EpisodeRepositoryImpl): EpisodeRepository
+    single<EpisodeRepository> {
+        EpisodeRepositoryImpl(
+            episodesRemoteDataSource = get(),
+        )
+    }
 
-    fun getEpisodesRemoteDataSource(impl: EpisodesRemoteDataSourceImpl): EpisodesRemoteDataSource
+    single<EpisodesRemoteDataSource> {
+        EpisodesRemoteDataSourceImpl(
+            apiClient = get(),
+        )
+    }
+
+    single {
+        LoadEpisodesForCurrentDayUseCase(
+            episodeRepository = get(),
+        )
+    }
+
+    single {
+        DeleteEpisodeFromListingUseCase(
+            episodeRepository = get(),
+        )
+    }
+
+    viewModelOf(::EpisodesViewModel)
 }

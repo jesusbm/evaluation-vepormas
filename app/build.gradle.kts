@@ -1,4 +1,6 @@
 plugins {
+    //alias(libs.plugins.kotlin.multiplatform)
+    //alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
@@ -8,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.ruskiikot.vepormasevaluacion"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.ruskiikot.claroevaluacion"
@@ -57,6 +59,11 @@ dependencies {
     // serialization
     implementation(libs.kotlinx.serialization)
 
-    // hilt
+    // koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
+    implementation(libs.koin.compose.viewmodel)
+    implementation(libs.koin.compose.viewmodel.navigation)
 
 }
