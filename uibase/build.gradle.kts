@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.lint)
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -21,11 +21,16 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
+
+                // compose
                 api(libs.compose.lifecycle.runtime)
                 api(libs.compose.ui)
                 api(libs.compose.ui.graphics)
                 api(libs.compose.ui.tooling.preview)
                 api(libs.compose.material3)
+
+                // navigation
+                api(libs.kotlinx.navigation.compose)
 
                 // coil
                 api(libs.coil.compose)

@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ve por mas evaluacion"
-include(":app")
+include(":androidApp")
 include(":domain")
 include(":feature:showdetails")
 include(":network")

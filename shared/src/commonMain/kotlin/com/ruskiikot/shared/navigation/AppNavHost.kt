@@ -1,4 +1,4 @@
-package com.ruskiikot.vepormasevaluacion.ui.navigation
+package com.ruskiikot.shared.navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold

@@ -1,4 +1,4 @@
-package com.ruskiikot.vepormasevaluacion.di
+package com.ruskiikot.shared.di
 
 import com.ruskiikot.vepormasevaluacion.showdetails.data.repository.ShowDetailsRepositoryImpl
 import com.ruskiikot.vepormasevaluacion.showdetails.data.datasource.ShowDetailsRemoteDataSource

@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.lint)
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -38,6 +41,19 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
+
+                api(project(":uibase"))
+                implementation(project(":domain"))
+                implementation(project(":network"))
+                implementation(project(":feature:episodes"))
+                implementation(project(":feature:showdetails"))
+
+                // koin
+                implementation(project.dependencies.platform(libs.koin.bom))
+                api(libs.koin.core)
+                implementation(libs.koin.compose)
+                implementation(libs.koin.compose.viewmodel)
+                implementation(libs.koin.compose.viewmodel.navigation)
             }
         }
 
@@ -49,6 +65,7 @@ kotlin {
 
         androidMain {
             dependencies {
+                api(libs.koin.android)
             }
         }
 
