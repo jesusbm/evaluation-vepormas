@@ -1,4 +1,4 @@
-package com.ruskiikot.shared.navigation
+package com.ruskiikot.vepormasevaluacion.navigation
 
 import kotlinx.serialization.Serializable
 

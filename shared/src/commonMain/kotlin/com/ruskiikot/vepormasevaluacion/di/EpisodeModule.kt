@@ -1,4 +1,4 @@
-package com.ruskiikot.shared.di
+package com.ruskiikot.vepormasevaluacion.di
 
 import com.ruskiikot.vepormasevaluacion.episodes.data.datasource.EpisodesRemoteDataSource
 import com.ruskiikot.vepormasevaluacion.episodes.data.datasource.impl.EpisodesRemoteDataSourceImpl

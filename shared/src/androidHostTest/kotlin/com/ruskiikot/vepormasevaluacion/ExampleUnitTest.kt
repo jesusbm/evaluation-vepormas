@@ -1,4 +1,4 @@
-package com.ruskiikot.shared
+package com.ruskiikot.vepormasevaluacion
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

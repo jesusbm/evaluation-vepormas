@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.ruskiikot.shared.navigation.AppScreenContainer
+import com.ruskiikot.vepormasevaluacion.navigation.AppScreenContainer
 import com.ruskiikot.vepormasevaluacion.ui.theme.VePorMasEvaluacionTheme
 
 class MainActivity : ComponentActivity() {

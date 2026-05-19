@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -8,6 +9,7 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven("https://jetbrains.space")
         gradlePluginPortal()
     }
 }

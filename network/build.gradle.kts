@@ -12,19 +12,9 @@ kotlin {
         minSdk = 29
     }
 
-    val xcfName = "sharedKit"
+    iosArm64()
 
-    iosArm64 {
-        binaries.framework {
-            baseName = xcfName
-        }
-    }
-
-    iosSimulatorArm64 {
-        binaries.framework {
-            baseName = xcfName
-        }
-    }
+    iosSimulatorArm64()
 
     sourceSets {
         commonMain {

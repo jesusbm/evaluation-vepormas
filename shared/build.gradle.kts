@@ -9,7 +9,7 @@ plugins {
 
 kotlin {
     androidLibrary {
-        namespace = "com.ruskiikot.shared"
+        namespace = "com.ruskiikot.vepormasevaluacion"
         compileSdk = 36
         minSdk = 29
 
@@ -53,7 +53,7 @@ kotlin {
                 api(libs.koin.core)
                 implementation(libs.koin.compose)
                 implementation(libs.koin.compose.viewmodel)
-                implementation(libs.koin.compose.viewmodel.navigation)
+                //implementation(libs.koin.compose.viewmodel.navigation)
             }
         }
 

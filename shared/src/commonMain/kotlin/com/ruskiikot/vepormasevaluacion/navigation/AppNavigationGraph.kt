@@ -1,4 +1,4 @@
-package com.ruskiikot.shared.navigation
+package com.ruskiikot.vepormasevaluacion.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
